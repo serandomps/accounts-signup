@@ -33,7 +33,7 @@ module.exports = function (sandbox, fn, options) {
             });
         });
         fn(false, function () {
-            sandbox.remove('.accounts-signup');
+            $('.accounts-signup', sandbox).remove();
         });
     });
 };
