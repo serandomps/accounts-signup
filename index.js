@@ -16,7 +16,7 @@ module.exports = function (sandbox, fn, options) {
                 url: USERS_API,
                 type: 'POST',
                 headers: {
-                    'x-host': 'accounts.serandives.com'
+                    'X-Host': 'accounts.serandives.com'
                 },
                 contentType: 'application/json',
                 data: JSON.stringify({
