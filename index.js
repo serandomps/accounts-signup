@@ -1,7 +1,7 @@
 var dust = require('dust')();
 var serand = require('serand');
 
-var USERS_API = '/apis/v/users';
+var USERS_API = 'https://accounts.serandives.com/apis/v/users';
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
@@ -15,9 +15,6 @@ module.exports = function (sandbox, fn, options) {
             $.ajax({
                 url: USERS_API,
                 type: 'POST',
-                headers: {
-                    'X-Host': 'accounts.serandives.com'
-                },
                 contentType: 'application/json',
                 data: JSON.stringify({
                     email: $('.email', elem).val(),
