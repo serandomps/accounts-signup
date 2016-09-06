@@ -1,7 +1,8 @@
 var dust = require('dust')();
 var serand = require('serand');
+var utils = require('utils');
 
-var USERS_API = 'https://accounts.serandives.com/apis/v/users';
+var USERS_API = utils.resolve('accounts://apis/v/users');
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
