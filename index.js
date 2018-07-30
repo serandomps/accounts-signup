@@ -6,10 +6,10 @@ var USERS_API = utils.resolve('accounts://apis/v/users');
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
-module.exports = function (sandbox, fn, options) {
+module.exports = function (sandbox, options, done) {
     dust.render('accounts-signup', {}, function (err, out) {
         if (err) {
-            return;
+            return done(err);
         }
         var elem = sandbox.append(out);
         $('.signup', elem).on('click', function () {
@@ -25,12 +25,12 @@ module.exports = function (sandbox, fn, options) {
                 success: function (data) {
                     serand.redirect('/signin');
                 },
-                error: function () {
-
+                error: function (xhr, status, err) {
+                    console.error(err || status || xhr);
                 }
             });
         });
-        fn(false, function () {
+        done(null, function () {
             $('.accounts-signup', sandbox).remove();
         });
     });
