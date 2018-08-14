@@ -1,3 +1,7 @@
 .accounts-signup .form-control {
     margin-bottom: 10px;
 }
+
+.accounts-signup .pull-right {
+    margin-left: 15px;
+}
