@@ -3,13 +3,13 @@ var serand = require('serand');
 var utils = require('utils');
 var captcha = require('captcha');
 
-var USERS_API = utils.resolve('accounts://apis/v/users');
+var USERS_API = utils.resolve('accounts:///apis/v/users');
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
 module.exports = function (sandbox, options, done) {
     var home = options.location || '/';
-    var signin = 'accounts://signin';
+    var signin = 'accounts:///signin';
     var suffix = '';
     var append = function (suff) {
         suffix += (suffix ? '&' : '?') + suff;
