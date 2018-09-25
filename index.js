@@ -7,7 +7,7 @@ var USERS_API = utils.resolve('accounts:///apis/v/users');
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
-module.exports = function (sandbox, options, done) {
+module.exports = function (ctx, sandbox, options, done) {
     var home = options.location || '/';
     var signin = 'accounts:///signin';
     var suffix = '';
@@ -50,7 +50,7 @@ module.exports = function (sandbox, options, done) {
                     },
                     dataType: 'json',
                     success: function (data) {
-                        serand.redirect('/signin');
+                        serand.direct('/signin');
                     },
                     error: function (xhr, status, err) {
                         console.error(err || status || xhr);
