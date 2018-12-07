@@ -7,7 +7,8 @@ var USERS_API = utils.resolve('accounts:///apis/v/users');
 
 dust.loadSource(dust.compile(require('./template'), 'accounts-signup'));
 
-module.exports = function (ctx, sandbox, options, done) {
+module.exports = function (ctx, container, options, done) {
+    var sandbox = container.sandbox;
     var home = options.location || '/';
     var signin = 'accounts:///signin';
     var suffix = '';
