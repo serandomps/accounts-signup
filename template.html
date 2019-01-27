@@ -1,271 +1,96 @@
-<div class="row accounts-signup">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <div class="accounts-signup panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <a class="panel-title" href="{home}">Home</a>
-                    <a class="panel-title pull-right" href="{signin}">Sign in</a>
-                </h3>
-            </div>
-            <div class="panel-body">
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control email" placeholder="Email">
+<div class="row mt-md-5">
+    <div class="col-md"></div>
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form role="form" class="m-sm-4">
+                    <header class="text-center mb-7">
+                        <h2 class="mb-0">Welcome to Serandives</h2>
+                        <p>Sign up to get started</p>
+                    </header>
+
+                    <div class="source alias form-group" data-name="alias">
+                        <label class="sr-only" for="alias-{id}">Name</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="alias-label-{id}">
+                                  <span class="fas fa-user"></span>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" name="alias" id="alias-{id}"
+                                   placeholder="Name" aria-label="Name"
+                                   aria-describedby="alias-label-{id}"
+                                   required>
+                        </div>
+                        <div class="invalid-feedback"></div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control password" placeholder="Password">
+
+                    <div class="source email form-group" data-name="email">
+                        <label class="sr-only" for="email-{id}">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="email-label-{id}">
+                                  <span class="fas fa-envelope"></span>
+                                </span>
+                            </div>
+                            <input type="email" class="form-control" name="email" id="email-{id}"
+                                   placeholder="Email" aria-label="Email"
+                                   aria-describedby="email-label-{id}"
+                                   required>
+                        </div>
+                        <div class="invalid-feedback"></div>
                     </div>
+
+                    <div class="source password form-group" data-name="password">
+                        <label class="sr-only" for="password-{id}">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="password-label-{id}">
+                                  <span class="fas fa-lock"></span>
+                                </span>
+                            </div>
+                            <input type="password" class="form-control" name="password" id="password-{id}"
+                                   placeholder="Password" aria-label="Password"
+                                   aria-describedby="password-label-{id}"
+                                   required>
+                        </div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="signup-error invalid-feedback"></div>
+                    </div>
+
                     <div class="form-group">
                         <div class="captcha" data-size="normal"></div>
                     </div>
-                    <button type="button" class="btn btn-default signup" disabled="disabled">Sign up</button>
+
+                    <div class="mb-2">
+                        <button type="submit" class="signup btn btn-block btn-secondary" disabled>Sign up</button>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col-12 text-center">
+                            <span class="small text-muted">Already have an account?</span>
+                            <a class="small" href="/signin"> Sign in</a>
+                        </div>
+                    </div>
+
+                    <!-- Login Buttons -->
+                    <div class="login d-flex">
+                        <a class="facebook btn btn-block border mr-1" href="#">
+                            <span class="fab fa-facebook-square mr-1"></span>
+                            Facebook
+                        </a>
+                        <a class="google btn btn-block border ml-1 mt-0" href="#">
+                            <span class="fab fa-google mr-1"></span>
+                            Google
+                        </a>
+                    </div>
+                    <!-- End Login Buttons -->
                 </form>
             </div>
         </div>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md"></div>
 </div>
-
-<form class="accounts-signin row js-validate">
-    <div class="col-md"></div>
-    <div class="col-md-6">
-        <!-- Login -->
-        <div id="login" data-target-group="idForm">
-            <!-- Title -->
-            <header class="text-center mb-7">
-                <h2 class="h4 mb-0">Welcome Back!</h2>
-                <p>Login to manage your account.</p>
-            </header>
-            <!-- End Title -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="signinEmail">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signinEmailLabel">
-                              <span class="fas fa-user"></span>
-                            </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="signinEmail" placeholder="Email"
-                               aria-label="Email" aria-describedby="signinEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Form Group -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="signinPassword">Password</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signinPasswordLabel">
-                              <span class="fas fa-lock"></span>
-                            </span>
-                        </div>
-                        <input type="password" class="form-control" name="password" id="signinPassword"
-                               placeholder="Password" aria-label="Password" aria-describedby="signinPasswordLabel"
-                               required
-                               data-msg="Your password is invalid. Please try again."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Form Group -->
-
-            <div class="d-flex justify-content-end mb-4">
-                <a class="js-animation-link small link-muted" href="javascript:;"
-                   data-target="#forgotPassword"
-                   data-link-group="idForm"
-                   data-animation-in="slideInUp">Forgot Password?</a>
-            </div>
-
-            <div class="mb-2">
-                <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Login</button>
-            </div>
-
-            <div class="text-center mb-4">
-                <span class="small text-muted">Do not have an account?</span>
-                <a class="js-animation-link small" href="javascript:;"
-                   data-target="#signup"
-                   data-link-group="idForm"
-                   data-animation-in="slideInUp"> Signup
-                </a>
-            </div>
-
-            <div class="text-center">
-                <span class="u-divider u-divider--xs u-divider--text mb-4">OR</span>
-            </div>
-
-            <!-- Login Buttons -->
-            <div class="d-flex">
-                <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="#">
-                    <span class="fab fa-facebook-square mr-1"></span>
-                    Facebook
-                </a>
-                <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="#">
-                    <span class="fab fa-google mr-1"></span>
-                    Google
-                </a>
-            </div>
-            <!-- End Login Buttons -->
-        </div>
-
-        <!-- Signup -->
-        <div id="signup" data-target-group="idForm">
-            <!-- Title -->
-            <header class="text-center mb-7">
-                <h2 class="h4 mb-0">Welcome to Front.</h2>
-                <p>Fill out the form to get started.</p>
-            </header>
-            <!-- End Title -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="signupEmail">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-            <span class="input-group-text" id="signupEmailLabel">
-              <span class="fas fa-user"></span>
-            </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Email"
-                               aria-label="Email" aria-describedby="signupEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="signupPassword">Password</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-            <span class="input-group-text" id="signupPasswordLabel">
-              <span class="fas fa-lock"></span>
-            </span>
-                        </div>
-                        <input type="password" class="form-control" name="password" id="signupPassword"
-                               placeholder="Password" aria-label="Password" aria-describedby="signupPasswordLabel"
-                               required
-                               data-msg="Your password is invalid. Please try again."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="signupConfirmPassword">Confirm Password</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-            <span class="input-group-text" id="signupConfirmPasswordLabel">
-              <span class="fas fa-key"></span>
-            </span>
-                        </div>
-                        <input type="password" class="form-control" name="confirmPassword" id="signupConfirmPassword"
-                               placeholder="Confirm Password" aria-label="Confirm Password"
-                               aria-describedby="signupConfirmPasswordLabel" required
-                               data-msg="Password does not match the confirm password."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Input -->
-
-            <div class="mb-2">
-                <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Get Started</button>
-            </div>
-
-            <div class="text-center mb-4">
-                <span class="small text-muted">Already have an account?</span>
-                <a class="js-animation-link small" href="javascript:;"
-                   data-target="#login"
-                   data-link-group="idForm"
-                   data-animation-in="slideInUp">Login
-                </a>
-            </div>
-
-            <div class="text-center">
-                <span class="u-divider u-divider--xs u-divider--text mb-4">OR</span>
-            </div>
-
-            <!-- Login Buttons -->
-            <div class="d-flex">
-                <a class="btn btn-block btn-sm btn-soft-facebook transition-3d-hover mr-1" href="#">
-                    <span class="fab fa-facebook-square mr-1"></span>
-                    Facebook
-                </a>
-                <a class="btn btn-block btn-sm btn-soft-google transition-3d-hover ml-1 mt-0" href="#">
-                    <span class="fab fa-google mr-1"></span>
-                    Google
-                </a>
-            </div>
-            <!-- End Login Buttons -->
-        </div>
-        <!-- End Signup -->
-
-        <!-- Forgot Password -->
-        <div id="forgotPassword" data-target-group="idForm">
-            <!-- Title -->
-            <header class="text-center mb-7">
-                <h2 class="h4 mb-0">Recover Password.</h2>
-                <p>Enter your email address and an email with instructions will be sent to you.</p>
-            </header>
-            <!-- End Title -->
-
-            <!-- Form Group -->
-            <div class="form-group">
-                <div class="js-form-message js-focus-state">
-                    <label class="sr-only" for="recoverEmail">Your email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-            <span class="input-group-text" id="recoverEmailLabel">
-              <span class="fas fa-user"></span>
-            </span>
-                        </div>
-                        <input type="email" class="form-control" name="email" id="recoverEmail" placeholder="Your email"
-                               aria-label="Your email" aria-describedby="recoverEmailLabel" required
-                               data-msg="Please enter a valid email address."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
-                    </div>
-                </div>
-            </div>
-            <!-- End Form Group -->
-
-            <div class="mb-2">
-                <button type="submit" class="btn btn-block btn-sm btn-primary transition-3d-hover">Recover Password
-                </button>
-            </div>
-
-            <div class="text-center mb-4">
-                <span class="small text-muted">Remember your password?</span>
-                <a class="js-animation-link small" href="javascript:;"
-                   data-target="#login"
-                   data-link-group="idForm"
-                   data-animation-in="slideInUp">Login
-                </a>
-            </div>
-        </div>
-        <!-- End Forgot Password -->
-    </div>
-    <div class="col-md"></div>
-</form>
-
