@@ -83,12 +83,18 @@ module.exports = function (ctx, container, options, done) {
 
     var captchaId;
 
-    dust.render('accounts-signup', {id: container.id, home: home, signup: signup}, function (err, out) {
+    dust.render('accounts-signup', {
+        _: {
+            container: container.id
+        },
+        home: home,
+        signup: signup
+    }, function (err, out) {
         if (err) {
             return done(err);
         }
         var elem = sandbox.append(out);
-        var lform = form.create(elem, configs);
+        var lform = form.create(container.id, elem, configs);
         lform.render(ctx, {}, function (err) {
             if (err) {
                 return done(err);
