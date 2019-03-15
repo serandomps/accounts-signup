@@ -153,7 +153,7 @@ module.exports = function (ctx, container, options, done) {
                                         },
                                         dataType: 'json',
                                         success: function (data) {
-                                            serand.direct('/signin');
+                                            serand.redirect('/signin');
                                         },
                                         error: function (xhr, status, err) {
                                             captcha.reset(captchaId, function () {
